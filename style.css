@@ -1,0 +1,1056 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Times, serif;
+}
+
+
+.nav{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 70px;
+    text-decoration: none;
+    border: none;
+    list-style-type: none;
+    border: 1px solid  gainsboro;
+}
+
+
+/* logo and icons */
+
+    .menu_bar{
+        height: 80px;
+        width: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+    }
+    .logo{
+        color:black;
+        font-size: 40px;
+    }
+    .menu_bar ul{
+        list-style: none;
+        display: flex;
+    }
+    .menu_bar ul li{
+        padding: 10px;
+    }
+    .menu_bar ul li a{
+        color: black;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .menu_bar ul li a:hover{
+        color: skyblue;
+    }
+    #chart{
+        height: 400px;
+      }
+
+
+/* search box */
+    .main{
+        width: 184px;
+        border: 01px solid  gainsboro ;
+        padding: 8px;
+        border-radius: 8px;
+        margin-right: 200px;
+    }
+    input{
+        background: transparent;
+        border: 0px;
+        outline: 0px;
+        /* width: 250px;     */
+    }
+     .icon-search{
+        color: gray;
+        font-size: 20px;
+     }
+
+     /* dashboard */
+    .dashboard ul{
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        margin-left: 72%;
+        margin-bottom: 5%;
+        margin-top: 0px;
+        white-space: 20px;
+        }
+        .container{
+            display: flex;  
+        }
+.container ul a{
+    margin-bottom: 60px;
+}
+.container h3{
+    margin-left: 30px;
+    margin-top: 19px;
+    margin-bottom: 10px;
+    font-size: 24px;
+
+    }
+     .container p{
+      margin-left:65%;
+     }
+     .container p i:hover{
+        color:rgb(15, 164, 223);
+     }
+.dashboard ul a:hover{
+color: blue;
+}
+
+/* dashboard details */
+.dashboard1{
+    border: 1px solid gainsboro;
+    width:45%;
+    height:95px;
+    margin-left: 30px;
+    border-radius: 4px;
+    /* display: flex; */
+}
+.dashboard2{
+    border: 1px solid gainsboro;
+    width:45%;
+    height:95px;
+    margin-left: 30px;
+    border-radius: 4px;
+}
+.dashboard3{
+    border: 1px solid gainsboro;
+    width:45%;
+    height:95px;
+    margin-left: 30px;
+    border-radius: 4px;
+}
+.dashboard4{
+    border: 1px solid gainsboro;
+    width:45%;
+    height:95px;
+    margin-left: 30px;
+    border-radius: 4px;
+    
+}
+
+
+.box{
+    border-radius: 10px;
+    margin-top: 17px;
+    margin-left: 20px;
+    width: 55px;
+    height: 55px;
+    border: 1px solid gainsboro;
+    background-color: rgba(224, 231, 231, 0.158);
+
+}
+
+#icons{
+    margin-left: 11px;
+    margin-top: 12px;
+    font-size: 30px;
+}
+
+.em1{
+    margin-top: -52px;
+    margin-left: 101px;
+    color: solid gainsboro;
+}
+
+.em2{
+    margin-left: 102px;
+    font-size: 28px;
+} 
+.income{
+    border: 1px solid gainsboro;
+    background-color:#fff(210, 216, 214, 0.267);
+   width: 45%;
+   height: 61vh;
+    float: right;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-top: -29%;
+    display: flex;
+    display: grid;
+}
+
+
+
+/* pie chart */
+.chart{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 100px;
+    margin-left: 30%;
+    background: conic-gradient(
+        rgb(131, 212, 245)  0%  30%,
+        rgb(245, 232, 48)     30% 55%,
+        rgb(59, 40, 80)   55%   100% 
+    )
+   }
+   .inc-analaysis{
+        margin-top: -35%;
+        font-size: 19px;
+        margin-left: 10px;
+        }
+        .value{
+            display:flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-top: 120%;
+        }
+        .d{
+            color: solid gainsboro;
+        }
+ .chart2{
+  
+    border: 1px solid gainsboro;
+    background-color:#f9f9f9(210, 216, 214, 0.267);
+    width: 96.5%;
+    height: 63vh;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 27px;
+    margin-top: 30px;
+    display: flex;
+    display: grid; 
+  }  
+  .chart2 p{
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size:20px;
+
+  }
+
+
+
+   /* total salary */
+  .tot-salary{
+  
+    border: 1px solid gainsboro;
+    background-color: whitesmoke;
+    width: 65%;
+    height: 70vh;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 27px;
+    margin-top: 30px;
+    display: flex;
+    display: grid; 
+  }
+  .tot-salary p{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size:20px;
+
+  }
+  
+.option {
+    margin-top: 10px;
+    }
+    
+    .caption {
+    font-size: 18px;
+    font-weight: 500;
+    }
+    
+    .option > span {
+    margin-right: 10px;
+    }
+    
+    .option > .dx-widget {
+    display: inline-block;
+    vertical-align: middle;
+    }
+    
+  
+     @media screen and (max-width: 768px) {
+        .main {
+            width: 21%;
+            padding: 0px;
+            margin-left:6px;
+        }
+        input {
+            width: 52%;
+            margin-left: 3px;
+        } 
+        .container{
+            width:97%;   
+        }
+        .container p{
+            position: absolute;
+            margin-left: 82%;
+            margin-top: 1%;
+        }
+        .container h3{
+            margin-left: 30px;
+            margin-top:19px;
+            font-size: 23px;
+        }
+        .income{
+            height: 72vh;
+            margin-top: -49%;
+        }
+    }
+
+
+
+    /* to-do list */
+    .to-do{
+        border: 1px solid gainsboro;
+        background-color:#f9f9f9(210, 216, 214, 0.267);
+        width: 30%;
+        height: 70vh;
+        margin-right: 20px;
+        border-radius: 4px;
+        margin-top: -33%;
+        float: right;
+    }
+
+    .heading{
+        position: relative;
+        top: 15px;
+        left: 15px;
+    }
+
+    .heading h4{
+        font-size: 25px;
+    }
+    .heading p{
+        font-size: 15px;
+        margin-left: 5px;
+        color: gray;
+    }
+    .maincontent1 p{
+        color: gray;
+    }
+
+    .wrapcontent{
+        position: relative;
+        top: 13px;
+    }
+
+    .wrap1{
+        display: flex;
+        position: relative;
+        top: 50px;
+        gap: 10px;
+    }
+
+    .line1{
+        display: inline-block;
+        background-color: rgb(168, 168, 168);
+        width: 27vw;
+        height: 1px;
+        position:absolute;
+        left: 15px;
+        top: 100px;
+    }
+    .wrap2{
+        display: flex;
+        position: relative;
+        top: 80px;
+        gap: 10px;
+    }
+    .line2{
+        display: inline-block;
+        background-color: rgb(168, 168, 168);
+        width: 27vw;
+        height: 1px;
+        position:absolute;
+        left: 15px;
+        top: 175px;
+    }
+
+    .wrap3{
+        display: flex;
+        position: relative;
+        top: 110px;
+        gap: 10px;
+    }
+
+    .line3{
+        display: inline-block;
+        background-color: rgb(168, 168, 168);
+        width: 27vw;
+        height: 1px;
+        position:absolute;
+        left: 15px;
+        top: 47vh;
+    }
+
+    .p2 ul li{
+        list-style: none;
+        color: gray;
+    }
+    .wrap4{
+        display: flex;
+        position: relative;
+        top: 135px;
+        gap: 10px;
+    }
+
+    input[type="checkbox"]{
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        margin-left: 10px;
+    }
+   
+     input[type="checkbox"]:hover{
+    background-color: #a5a5a5;
+    }
+
+
+
+    /* employee performance */
+    .emp-perf{
+        border: 1px solid gainsboro;
+        background-color:#f9f9f9(210, 216, 214, 0.267);
+        width: 65%;
+        height: 70vh;
+        margin-left: 27px;
+        margin-top: 20px;
+        border-radius: 4px;  
+    }
+
+.emp-perf h3{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.ep1{
+    margin-left:20px;
+    width:94%;
+    height:47px;
+    background-color:rgb(231, 230, 230);
+    margin-top: 20px;
+}
+.table{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+.t1{
+    margin-left: 10px;
+    margin-top: 14px;
+}
+.t2{
+    margin-left: 40px;
+    margin-top: 14px;
+}
+.t3{
+    margin-left: 20%;
+    margin-top: 14px; 
+}
+.t4{
+     margin-left: 15%;
+    margin-top: 14px;
+}
+.underline{
+    display: inline-block;
+    background-color: rgb(168, 168, 168);
+    width: 60.3vw;
+    height: 1px;
+    margin-left: 20px;
+    margin-bottom: 13px;
+}
+
+
+.ep2{
+    margin-left:20px;
+    width:94%;
+    height:62px;
+    background-color:white;
+    margin-top: -17px;
+}
+.img1{
+   width: 40px;
+   height: 40px;
+   border-radius: 20px;
+   margin-left: 12px;
+   margin-top: 10px;
+   border: 1px solid white;
+}
+.table1{
+    display: flex;
+    flex-direction: row;
+}
+.t1-1{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.t1-2{
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.btn{
+    position: relative;
+    left: 17%;
+    top: 12px;
+    width: 8%;
+    height: 30px;
+    color: green;
+    border: 2px solid green;
+    background-color: white;
+    border-radius: 10px;
+}
+.buttonchart{
+    position: relative;
+    top: 20px;
+    left: 31%;  
+    transition: 2s; 
+}
+.btn1{
+    width: 4px;
+    height: 10px;
+    color: rgb(26, 161, 179);
+    background-color:rgb(26, 161, 179) ;
+    border: none;
+}
+.btn1:hover {
+    background-color: rgb(143, 195, 219); 
+    cursor: pointer; 
+}
+.btn2{
+    width: 4px;
+    height: 20px;
+    color:rgb(26, 161, 179);
+    background-color: rgb(26, 161, 179);
+    border: none;
+}
+.btn2:hover {
+    background-color: rgb(143, 195, 219); 
+    cursor: pointer; 
+}
+.btn3{
+    width: 4px;
+    height:5px;
+    color:rgb(26, 161, 179);
+    background-color: rgb(26, 161, 179);
+    border: none;
+}
+.btn3:hover {
+    background-color: rgb(143, 195, 219); 
+    cursor: pointer; 
+}
+.btn4{
+    width: 4px;
+    height: 15px;
+    color:rgb(26, 161, 179);
+    background-color: rgb(26, 161, 179);
+    border: none;
+}
+.btn4:hover {
+    background-color: rgb(143, 195, 219); 
+    cursor: pointer; 
+}
+.btn5{
+    width: 4px;
+    height: 27px;
+    color:rgb(26, 161, 179);
+    background-color:rgb(26, 161, 179);
+    border: none;
+}
+.btn5:hover {
+    background-color: rgb(143, 195, 219); 
+    cursor: pointer; 
+}
+.btn6{
+    width: 4px;
+    height: 17px;
+    color:rgb(26, 161, 179);
+    background-color:rgb(26, 161, 179);
+    border: none;
+}
+.btn6:hover {
+    background-color: rgb(143, 195, 219); 
+    cursor: pointer; 
+}
+
+
+.ep3{
+    margin-left:20px;
+    width:94%;
+    height:62px;
+    background-color:white;
+    margin-top: -17px;
+}
+.img2{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 12px;
+    margin-top: 10px;
+    border: 1px solid white;
+ }
+ .table2{
+    display: flex;
+    flex-direction: row;
+    
+}
+.t2-1{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.t2-2{
+    position: relative;
+    top: 20px;
+    left: 132px;
+}
+.btns{
+    position: relative;
+    left: 39%;
+    top: 12px;
+    width: 10%;
+    height: 30px;
+    color: rgb(247, 99, 13);
+    border: 2px solid rgb(247, 99, 13);
+    background-color: white;
+    border-radius: 10px;
+}
+.buttonchart1{
+    position: relative;
+    top: 20px;
+    left: 52%;  
+    transition: 2s; 
+}
+.btnn1{
+    width: 4px;
+    height: 10px;
+    color: rgb(247, 99, 13);
+    background-color:  rgb(247, 99, 13);
+    border: none;
+}
+.btnn1:hover {
+    background-color: rgb(235, 206, 162); 
+    cursor: pointer; 
+}
+.btnn2{
+    width: 4px;
+    height: 9px;
+    color: rgb(247, 99, 13);
+    background-color:  rgb(247, 99, 13);
+    border: none;
+}
+.btnn2:hover {
+    background-color: rgb(235, 206, 162); 
+    cursor: pointer; 
+}
+.btnn3{
+    width: 4px;
+    height:9px;
+    color: rgb(247, 99, 13);
+    background-color:  rgb(247, 99, 13);
+    border: none;
+}
+.btnn3:hover {
+    background-color: rgb(235, 206, 162); 
+    cursor: pointer; 
+}
+.btnn4{
+    width: 4px;
+    height: 15px;
+    color: rgb(247, 99, 13);
+    background-color: rgb(247, 99, 13);
+    border: none;
+}
+.btnn4:hover {
+    background-color: rgb(235, 206, 162); 
+    cursor: pointer; 
+}
+.btnn5{
+    width: 4px;
+    height: 5px;
+    color: rgb(247, 99, 13);
+    background-color:rgb(247, 99, 13);
+    border: none;
+}
+.btnn5:hover {
+    background-color: rgb(235, 206, 162); 
+    cursor: pointer; 
+}
+.btnn6{
+    width: 4px;
+    height: 8px;
+    color: rgb(247, 99, 13);
+    background-color: rgb(247, 99, 13);
+    border: none;
+}
+.btnn6:hover {
+    background-color: rgb(235, 206, 162); 
+    cursor: pointer; 
+}
+
+
+
+.ep4{
+    margin-left:20px;
+    width:94%;
+    height:62px;
+    background-color:white;
+    margin-top: -17px;
+}
+.img3{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 12px;
+    margin-top: 10px;
+    border: 1px solid white;
+ }
+ .table3{
+    display: flex;
+    flex-direction: row;
+    
+}
+.t3-1{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.t3-2{
+    position: relative;
+    top: 20px;
+    left: 87px;
+}
+.btna{
+    position: relative;
+    left: 30%;
+    top: 12px;
+    width: 10%;
+    height: 30px;
+    color: rgb(9, 155, 180);
+    border: 2px solid rgb(9, 155, 180);
+    background-color: white;
+    border-radius: 10px;
+}
+.buttonchart2{
+    position: relative;
+    top: 20px;
+    left: 44%;  
+    transition: 2s; 
+}
+.btnns1{
+    width: 4px;
+    height: 10px;
+    color: rgb(145, 144, 204);
+    background-color:  rgb(145, 144, 204);
+    border: none;
+}
+.btnns1:hover {
+    background-color: rgb(76, 76, 80); 
+    cursor: pointer; 
+}
+.btnns2{
+    width: 4px;
+    height: 9px;
+    color: rgb(145, 144, 204);
+    background-color: rgb(145, 144, 204);
+    border: none;
+}
+.btnns2:hover {
+    background-color: rgb(76, 76, 80); 
+    cursor: pointer; 
+}
+.btnns3{
+    width: 4px;
+    height:9px;
+    color:rgb(145, 144, 204);
+    background-color: rgb(145, 144, 204);
+    border: none;
+}
+.btnns3:hover {
+    background-color: rgb(76, 76, 80); 
+    cursor: pointer; 
+}
+.btnns4{
+    width: 4px;
+    height: 15px;
+    color: rgb(145, 144, 204);
+    background-color:rgb(145, 144, 204);
+    border: none;
+}
+.btnns4:hover {
+    background-color: rgb(76, 76, 80); 
+    cursor: pointer; 
+}
+.btnns5{
+    width: 4px;
+    height: 5px;
+    color:rgb(145, 144, 204);
+    background-color: rgb(145, 144, 204);
+    border: none;
+}
+.btnns5:hover {
+    background-color: rgb(76, 76, 80); 
+    cursor: pointer; 
+}
+.btnns6{
+    width: 4px;
+    height: 8px;
+    color:rgb(145, 144, 204);
+    background-color: rgb(145, 144, 204);
+    border: none;
+}
+.btnns6:hover {
+    background-color: rgb(76, 76, 80); 
+    cursor: pointer; 
+}
+
+
+.ep5{
+    margin-left:20px;
+    width:94%;
+    height:62px;
+    background-color:white;
+    margin-top: -17px;
+}
+.img4{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 12px;
+    margin-top: 10px;
+    border: 1px solid white;
+ }
+ .table4{
+    display: flex;
+    flex-direction: row;
+    
+}
+.t4-1{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.t4-2{
+    position: relative;
+    top: 20px;
+    left: 112px;
+}
+.btni{
+    position: relative;
+    left: 29%;
+    top: 12px;
+    width: 10%;
+    height: 30px;
+    color: rgb(218, 12, 12);
+    border: 2px solid rgb(218, 12, 12);
+    background-color: white;
+    border-radius: 10px;
+}
+.buttonchart3{
+    position: relative;
+    top: 20px;
+    left: 43%;  
+    transition: 2s; 
+}
+.btnna1{
+    width: 4px;
+    height: 12px;
+    color: rgb(3, 30, 43);
+    background-color:  rgb(3, 30, 43);
+    border: none;
+}
+.btnna1:hover {
+    background-color: rgb(57, 57, 131); 
+    cursor: pointer; 
+}
+.btnna2{
+    width: 4px;
+    height: 7px;
+    color: rgb(3, 30, 43);
+    background-color: rgb(3, 30, 43);
+    border: none;
+}
+.btnna2:hover {
+    background-color: rgb(57, 57, 131); 
+    cursor: pointer; 
+}
+.btnna3{
+    width: 4px;
+    height:10px;
+    color:rgb(3, 30, 43);
+    background-color: rgb(3, 30, 43);
+    border: none;
+}
+.btnna3:hover {
+    background-color: rgb(57, 57, 131); 
+    cursor: pointer; 
+}
+.btnna4{
+    width: 4px;
+    height: 22px;
+    color: rgb(3, 30, 43);
+    background-color:rgb(3, 30, 43);
+    border: none;
+}
+.btnna4:hover {
+    background-color: rgb(57, 57, 131); 
+    cursor: pointer; 
+}
+.btnna5{
+    width: 4px;
+    height: 19px;
+    color:rgb(3, 30, 43);
+    background-color: rgb(3, 30, 43);
+    border: none;
+}
+.btnna5:hover {
+    background-color: rgb(57, 57, 131); 
+    cursor: pointer; 
+}
+.btnna6{
+    width: 4px;
+    height: 15px;
+    color:rgb(3, 30, 43);
+    background-color: rgb(3, 30, 43);
+    border: none;
+}
+.btnna6:hover {
+    background-color: rgb(57, 57, 131); 
+    cursor: pointer; 
+}
+
+
+.ep6{
+    margin-left:20px;
+    width:94%;
+    height:62px;
+    background-color:white;
+    margin-top: -17px;
+}
+.img5{
+   width: 40px;
+   height: 40px;
+   border-radius: 20px;
+   margin-left: 12px;
+   margin-top: 10px;
+   border: 1px solid white;
+}
+.table5{
+    display: flex;
+    flex-direction: row;
+}
+.t5-1{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.t5-2{
+    position: relative;
+    top: 20px;
+    left: 106px;
+}
+.btnii{
+    position: relative;
+    left: 31%;
+    top: 12px;
+    width: 8%;
+    height: 30px;
+    color: green;
+    border: 2px solid green;
+    background-color: white;
+    border-radius: 10px;
+}
+.buttonchart4{
+    position: relative;
+    top: 20px;
+    left: 47%;  
+    transition: 2s; 
+}
+.btnnt1{
+    width: 4px;
+    height: 10px;
+    color: rgb(219, 113, 136);
+    background-color: rgb(219, 113, 136) ;
+    border: none;
+}
+.btnnt1:hover {
+    background-color: rgb(255, 174, 185); 
+    cursor: pointer; 
+}
+.btnnt2{
+    width: 4px;
+    height: 20px;
+    color: rgb(219, 113, 136);
+    background-color:  rgb(219, 113, 136);
+    border: none;
+}
+.btnnt2:hover {
+    background-color: rgb(255, 174, 185); 
+    cursor: pointer; 
+}
+.btnnt3{
+    width: 4px;
+    height:5px;
+    color: rgb(219, 113, 136);
+    background-color:  rgb(219, 113, 136);
+    border: none;
+}
+.btnnt3:hover {
+    background-color: rgb(255, 174, 185); 
+    cursor: pointer; 
+}
+.btnnt4{
+    width: 4px;
+    height: 15px;
+    color: rgb(219, 113, 136);
+    background-color:  rgb(219, 113, 136);
+    border: none;
+}
+.btnnt4:hover {
+    background-color: rgb(255, 174, 185);  
+    cursor: pointer; 
+}
+.btnnt5{
+    width: 4px;
+    height: 27px;
+    color: rgb(219, 113, 136);
+    background-color: rgb(219, 113, 136);
+    border: none;
+}
+.btnnt5:hover {
+    background-color: rgb(255, 174, 185); 
+    cursor: pointer; 
+}
+.btnnt6{
+    width: 4px;
+    height: 17px;
+    color: rgb(219, 113, 136);
+    background-color: rgb(219, 113, 136);
+    border: none;
+}
+.btnnt6:hover {
+    background-color: rgb(255, 174, 185); 
+    cursor: pointer; 
+}
+
+
+
+/* employee structure */
+.emp-str{
+    border: 1px solid gainsboro;
+    background-color:#f9f9f9(210, 216, 214, 0.267);
+    width: 30%;
+    height: 70vh;
+    margin-right: 20px;
+    border-radius: 4px;
+    margin-top: -33%;
+    float: right;
+}
+.emp-str h3{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.do-male{
+    position: relative;
+    top: 17%;
+   margin-left: 134px;
+}
+.do-female{
+    position: relative;
+    top: 20%;
+   
+    margin-left: 134px;
+}

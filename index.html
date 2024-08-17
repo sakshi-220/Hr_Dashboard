@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>hr management</title>
+ 
+  <style>
+
+    
+    .donut-chart {
+        position: relative;
+        left: 24%;
+        top: 14%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(
+            #ff9a76 0 25%,
+            #2eacb3 25% 100%,
+            #0000ff 50% 75%,
+            #ffff00 75% 100%
+        );
+    }
+    
+    .center-hole {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        background: #f0f0f0;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .tooltip {
+        position: absolute;
+        background: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+
+    #elementToHover {
+        display: inline-block;
+        position: relative;
+    }
+
+    #elementToPopup {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 7px;
+        background-color: #555;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    #elementToPopup.show {
+        display: block;
+    }
+
+    body2 {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #chartContainer {
+        width: 80%;
+        max-width: 800px;
+    }
+
+    
+</style> 
+  <style>
+
+    
+    .chart1-container {
+        width: 80%;
+        max-width: 600px;
+        height: 400px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        position: relative;
+    }
+    
+    .chart1 {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 90%;
+        position: relative;
+        width: 800px;
+        margin-left: 138px;
+        margin-top:-35px;
+    }
+    
+    .bar {
+        width: 9%;
+        background-color: #3498db;
+        text-align: center;
+        color: #fff;
+        border-radius: 3px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .bar:hover {
+        background-color: #2980b9;
+    }
+    
+    .bar::after {
+        content: attr(title);
+        position: absolute;
+        top: -25px;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        font-size: 12px;
+        color: #333;
+    }
+    
+    /* Background lines for comparison */
+    .line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #ddd;
+    }
+    
+    .line-0 { top: 145%; width: 90%; margin-left: 90px;}
+    .line-40 { top: 137%; width: 90%; margin-left: 90px;}
+    .line-80 { top: 129%; width: 90%; margin-left: 90px;}
+    .line-120 { top: 121%; width: 90%; margin-left: 90px;}
+    .line-160 { top: 113%; width: 90%; margin-left: 90px;}
+    .line-200 { top: 105%; width: 90%; margin-left: 90px;}
+    
+    .line::before {
+        content: attr(data-label);
+        position: absolute;
+        left: -40px;
+        top: -10px;
+        font-size: 12px;
+        color: #777;
+    }
+    @media screen and (max-width: 768px) {
+    .line-0{ top: 158%; width: 84%; margin-left: 82px;}
+        .line-40{ top: 151%; width: 84%; margin-left: 82px;}
+        .line-80{ top: 144%; width: 84%; margin-left: 82px;}
+        .line-120{ top: 137%; width: 84%; margin-left: 82px;}
+        .line-160{ top: 130%; width: 84%; margin-left: 82px;}
+        .line-200{ top: 123%; width: 84%; margin-left: 82px;}
+        .chart1{
+            height: 90%;
+           width: 634px;
+         margin-left: 53px;
+         margin-top: -27px;
+        }
+    }
+
+</style>
+  
+
+</head>
+<body>
+    <nav>
+        <div class="menu_bar">
+        <h2 class="logo">Lucid</h2>
+           <div class="main">
+                    <input type="search" placeholder="Search here....">
+                    <a href="#"><i class='bx bx-search icon-search'></i></a>
+            </div>
+         <ul>
+            <li><a href="#"><i class='bx bxs-dashboard'></i></a></li>
+            <li><a href="#"><i class='bx bx-calendar'></i></a></li>
+            <li><a href="#"><i class='bx bx-chat'></i></a></li>
+            <li><a href="#"><i class='bx bx-envelope'></i></i></a></li>
+            <li><a href="#"><i class='bx bx-bell' ></i></a></li>
+            <li><a href="#"><i class='bx bx-cog'></i></a></li>
+            <li><a href="#"><i class='bx bx-log-in' ></i></a></li>
+         </ul>
+         </div>
+    </nav>
+
+
+
+         <div class="dashboard">
+            
+            <div class="container">
+                <h3>HR Dashboard</h3>
+                <!-- <ul>
+                    <li><a href="#"><i class='bx bx-home'></i></a></li>
+                   
+                </ul> -->
+                <p><i class='bx bx-home'></i> / HR Dashboard</p>
+            </div>
+            
+         </div>
+
+         <div class="dashboard1">
+            <div class="box">
+                <i class='bx bx-user' id="icons"></i>
+            </div>
+            <p class="em1">New Employee</p>
+            <p class="em2" ><b>22</b></p>
+        </div>
+<div class="dashboard2">
+    <div class="box">
+        <i class='bx bx-group' id="icons"></i>
+            </div>
+            <p class="em1">Total Employee</p>
+            <p class="em2" ><b>425</b></p>
+    </div>
+</div>
+<div class="dashboard3">
+    <div class="box">
+        <i class='bx bx-dollar' id="icons"></i>
+    </div>
+            <p class="em1">Total Salary</p>
+            <p class="em2" ><b>$2.8M</b></p>
+        </div>
+</div>
+<div class="dashboard4">
+    <div class="box">
+        <i class='bx bx-money-withdraw' id="icons"></i>
+            </div>
+            <p class="em1">Avg. Salary</p>
+            <p class="em2" ><b>$1,250</b></p>
+    </div>
+</div>
+<div class="income">
+   <div class="chart">
+    <div class="inc-analaysis">
+        <h3>Income Analysis</h3>
+        <p>8% High then last month</p>
+    </div>
+    <div class="value">
+    <div class="ch1">
+        <p>Design</p>
+        <p><b>84.60%</b></p>
+    </div>
+    <div class="ch2">
+        <p>Dev</p>
+        <p><b>15.40%</b></p>
+    </div>
+    <div class="ch3">
+        <p>SEO</p>
+        <p><b>5.10%</b></p>
+    </div>
+</div>
+</div>
+   </div>
+</div>
+
+
+<div class="chart2">
+    <p><b>Salary Statistics</b></p>
+    <div class="chart-container">
+        <div class="line line-0" data-label="0%"></div>
+        <div class="line line-40" data-label="40%"></div>
+        <div class="line line-80" data-label="80%"></div>
+        <div class="line line-120" data-label="120%"></div>
+        <div class="line line-160" data-label="160%"></div>
+        <div class="line line-200" data-label="200%"></div>
+
+        <div class="chart1">
+            <div class="bar" style="height: 80%;" title="80%">80%</div>
+            <div class="bar" style="height: 60%;" title="60%">60%</div>
+            <div class="bar" style="height: 90%;" title="90%">90%</div>
+            <div class="bar" style="height: 50%;" title="50%">50%</div>
+            <div class="bar" style="height: 70%;" title="70%">70%</div>
+            <div class="bar" style="height: 40%;" title="70%">40%</div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- total-salary -->
+
+
+
+<div class="tot-salary">
+<p><b>Total Salary by Unit</b></p>
+<div class="body2">
+<div id="chartContainer">
+    <canvas id="myChart"></canvas>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'Sales 2023',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.4
+                },
+                {
+                    label: 'Sales 2024',
+                    data: [45, 49, 60, 71, 46, 35, 30],
+                    fill: false,
+                    borderColor: 'rgb(255, 99, 132)',
+                    tension: 0.4
+                },
+                {
+                    label: 'Sales 2025',
+                    data: [75, 69, 90, 101, 66, 65, 50],
+                    fill: false,
+                    borderColor: 'rgb(54, 162, 235)',
+                    tension: 0.4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Value'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</div>
+
+<!-- to-do list -->
+
+<div class="to-do">
+    <div class="heading">
+        <h4>To Do List</h4>
+        <p>This Month Task List</p>
+    </div>
+
+    <div class="wrapcontent">
+        <div class="wrap1">
+            <input type="checkbox" id="check">
+            <label for="check"></label>
+
+            <div class="maincontent1">
+                <h3>New Employee Intro</h3>
+                <p>SCHEDULED FOR 3:00 P.M. ON JUN 2021</p>
+            </div>
+           
+        </div>
+        <span class="line1"></span>
+
+    <div class="wrap2">
+        <input type="checkbox" id="check">
+        <label for="check"></label>
+
+        <div class="maincontent1">
+            <h3>Send Email to CEO</h3>
+            <p>SCHEDULED FOR 4:00 P.M. ON JUN 2021</p>
+        </div>
+    </div>
+    <span class="line2"></span>
+
+    <div class="wrap3">
+        <input type="checkbox" id="check">
+        <label for="check"></label>
+
+        <div class="p2">
+            <h3>New Joining Employee Welcome Kit</h3>
+            <ul>
+             <li>John Smith(Designer)</li>
+             <li>Hossein Shams(Developer)</li>
+             <li>Maryam Amiri(SEO)</li>
+             <li>Mike Litorus(ISO Developer)</li>
+            </ul>
+        </div>
+    </div>
+    <span class="line3"></span>
+
+    <div class="wrap4">
+        <input type="checkbox" id="check">
+        <label for="check"></label>
+
+        <div class="maincontent1">
+            <h3>Birthday Wishes</h3>
+            <p>SCHEDULED FOR 4:00 P.M. ON JUN 2021</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- employee performance -->
+
+<div class="emp-perf">
+  <h3>Employee Performance</h3>
+    <div class="ep1">
+        <div class="table">
+          <p class="t1"><b>AVATAR</b></p>
+          <p class="t2"><b>NAME</b></p>
+          <p class="t3"><b>DESIGNATION</b></p>
+          <p class="t4"><b>PERFORMANCE</b></p>
+        </div>
+    </div>
+    <span class="underline"></span>
+
+    <div class="ep2">
+        <div class="table1">
+            <img src="male1.webp" class="img1">
+            <p class="t1-1">Marshall Nichols</p>
+            <p class="t1-2">UI UX Designer</p>
+            <button class="btn">Good</button>
+            <div class="buttonchart">
+                <button class="btn1"></button>
+                <button class="btn2"></button>
+                <button class="btn3"></button>
+                <button class="btn4"></button>
+                <button class="btn5"></button>
+                <button class="btn6"></button>
+            </div>
+        </div>
+    </div>
+    <span class="underline"></span>
+    
+    <div class="ep3">
+        <div class="table2">
+            <img src="female1.avif" class="img2">
+            <p class="t2-1">Susie Willis</p>
+            <p class="t2-2">Designer</p>
+            <button class="btns">Average</button>
+            <div class="buttonchart1">
+                <button class="btnn1"></button>
+                <button class="btnn2"></button>
+                <button class="btnn3"></button>
+                <button class="btnn4"></button>
+                <button class="btnn5"></button>
+                <button class="btnn6"></button>
+            </div>
+        </div>
+    </div>
+    <span class="underline"></span>
+
+
+    <div class="ep4">
+        <div class="table3">
+            <img src="female2.jpg" class="img3">
+            <p class="t3-1">Francisco Vasquez</p>
+            <p class="t3-2">Team Leader</p>
+            <button class="btna">Excellent</button>
+            <div class="buttonchart2">
+                <button class="btnns1"></button>
+                <button class="btnns2"></button>
+                <button class="btnns3"></button>
+                <button class="btnns4"></button>
+                <button class="btnns5"></button>
+                <button class="btnns6"></button>
+            </div>
+        </div>
+    </div>
+    <span class="underline"></span>
+
+
+    <div class="ep5">
+        <div class="table4">
+            <img src="male2.jpeg" class="img4">
+            <p class="t4-1">Erin Gonzales</p>
+            <p class="t4-2">Android Developer</p>
+            <button class="btni">Weak</button>
+            <div class="buttonchart3">
+                <button class="btnna1"></button>
+                <button class="btnna2"></button>
+                <button class="btnna3"></button>
+                <button class="btnna4"></button>
+                <button class="btnna5"></button>
+                <button class="btnna6"></button>
+            </div>
+        </div>
+    </div>
+    <span class="underline"></span>
+
+
+    <div class="ep6">
+        <div class="table5">
+            <img src="male3.webp" class="img5">
+            <p class="t5-1">Ava Alexander</p>
+            <p class="t5-2">UI UX Designer</p>
+            <button class="btnii">Good</button>
+            <div class="buttonchart4">
+                <button class="btnnt1"></button>
+                <button class="btnnt2"></button>
+                <button class="btnnt3"></button>
+                <button class="btnnt4"></button>
+                <button class="btnnt5"></button>
+                <button class="btnnt6"></button>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<div class="emp-str">
+    <h3>Employee structure</h3>
+    <div class="donut-chart">
+        <div id= "elementToHover" class="slice one" data-value="25%"></div>
+        <div id="elementToHover" class="slice two" data-value="25%"></div>
+        <div id= "elementToHover" class="slice three" data-value="25%"></div>
+        <div id="elementToHover" class="slice four" data-value="25%"></div>
+        <div class="center-hole"></div>
+        <div class="tooltip"></div>
+        <div id="elementToPopup">Popped Up Content
+            - JavaScript ClassList Approach</div>
+    </div>
+    <div class="do-male">
+        <p>Male</p>
+        <p><b>73%</b></p>
+    </div>
+    <div class="do-female">
+        <p>Female</p>
+        <p><b>23%</b></p>
+    </div>
+</div>
+<script>
+    const elementToHover = document.
+    getElementById('elementToHover');
+    const elementToPopup = document.
+    getElementById('elementToPopup');
+
+    elementToHover.addEventListener('mouseover',
+    () => {
+        elementToPopup.classList.add('show');
+    });
+
+    elementToHover.addEventListener('mouseout',
+    () => {
+        elementToPopup.classList.remove('show');
+    });
+</script>
+
+<script src="graph.js"></script>
+</body>
+</html>
